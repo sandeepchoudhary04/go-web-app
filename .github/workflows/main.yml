@@ -32,9 +32,11 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
+    
     - name: Run golangci-lint
-      run: golangci-lint run ./...
-  
+      uses: golangci/golangci-lint-action@v3
+      with:
+        version: v1.59.0
   push:
     runs-on: ubuntu-latest
 
